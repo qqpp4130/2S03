@@ -9,6 +9,9 @@ class Car {
     // Plate number, which is supposed to be unique among all cars.
     private int plateNumber;
 
+    // Trip recorder
+    private ArrayList<double> tripRecorder;
+
     /***
      * Creates a full-tank car from the given model.
      * @param model
@@ -17,6 +20,7 @@ class Car {
         this.model = model;
         this.currentGasLevel = model.getGasTankSize();
         this.plateNumber = plateNumber;
+        this.tripRecoder = tripRecorder;
     }
 
     void refill() {
@@ -35,7 +39,12 @@ class Car {
             return false;
         }
         currentGasLevel -= estimatedFuelConsumption;
+        tripRecorder.add(distance);
         return true;
+    }
+
+    ArrayList<double> getRecorder {
+        return tripRecorder;
     }
 
     int getPlateNumber() {

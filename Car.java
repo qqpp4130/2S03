@@ -45,10 +45,11 @@ class Car {
         return true;
     }
 
-    int getTrips(double distance) {
+    int getTrips(float distance) {
         int Trips = 0;
+        double converted = distance;
         for (int i = 0; i < tripRecorder.size(); i++) {
-            if (tripRecorder.get(i) >= distance) {
+            if (tripRecorder.get(i) >= converted) {
                 Trips++;
             }
         }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class Car {
 
     // Current gas level in liters
@@ -10,7 +12,7 @@ class Car {
     private int plateNumber;
 
     // Trip recorder
-    private ArrayList<double> tripRecorder;
+    private ArrayList<double[]> tripRecorder;
 
     /***
      * Creates a full-tank car from the given model.
@@ -20,7 +22,7 @@ class Car {
         this.model = model;
         this.currentGasLevel = model.getGasTankSize();
         this.plateNumber = plateNumber;
-        this.tripRecoder = tripRecorder;
+        this.tripRecorder = tripRecorder;
     }
 
     void refill() {
@@ -32,7 +34,7 @@ class Car {
     @param distance The length of the trip in kilometers.
      @return true if the trip was successful, false if there was not enough fuel.
       */
-    boolean trip(double distance) {
+    boolean trip(double[] distance) {
         double estimatedFuelConsumption = (distance/100.0)*model.getFuelEconomy();
         if (estimatedFuelConsumption > currentGasLevel) {
             currentGasLevel = 0;
@@ -43,8 +45,14 @@ class Car {
         return true;
     }
 
-    ArrayList<double> getRecorder {
-        return tripRecorder;
+    int getTrips(double distance) {
+        int Trips = 0;
+        for (int i = 0; i < tripRecorder.size(); i++) {
+            if (tripRecorder.get(i) >= distance) {
+                Trips++;
+            }
+        }
+        return Trips;
     }
 
     int getPlateNumber() {

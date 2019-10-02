@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 class Car {
 
     // Current gas level in liters
@@ -11,9 +9,6 @@ class Car {
     // Plate number, which is supposed to be unique among all cars.
     private int plateNumber;
 
-    // Trip recorder
-    private ArrayList<double[]> tripRecorder = new ArrayList<double[]>();
-
     /***
      * Creates a full-tank car from the given model.
      * @param model
@@ -22,7 +17,6 @@ class Car {
         this.model = model;
         this.currentGasLevel = model.getGasTankSize();
         this.plateNumber = plateNumber;
-        this.tripRecorder = tripRecorder;
     }
 
     void refill() {
@@ -41,18 +35,7 @@ class Car {
             return false;
         }
         currentGasLevel -= estimatedFuelConsumption;
-        tripRecorder.add(distance);
         return true;
-    }
-
-    int getTrips(double distance) {
-        int Trips = 0;
-        for (int i = 0; i < tripRecorder.size(); i++) {
-            if (tripRecorder.get(i) >= distance) {
-                Trips++;
-            }
-        }
-        return Trips;
     }
 
     int getPlateNumber() {

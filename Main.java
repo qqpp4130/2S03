@@ -8,7 +8,6 @@ class Main {
         // initialize a arraylist to store variables
         ArrayList<CarModel> models = new ArrayList<CarModel>();
         ArrayList<Car> cars = new ArrayList<Car>();
-        ArrayList<double[]> Recodes = new ArrayList<double[]>();
         while (true) {
             String[] input = read.nextLine().split(" ");
             if (input[0].equals("MODEL")) {

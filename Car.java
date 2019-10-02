@@ -12,7 +12,7 @@ class Car {
     private int plateNumber;
 
     // Trip recorder
-    private ArrayList<double[]> tripRecorder = new ArrayList<double[]>();
+    private ArrayList<Double> tripRecorder;
 
     /***
      * Creates a full-tank car from the given model.
@@ -22,7 +22,7 @@ class Car {
         this.model = model;
         this.currentGasLevel = model.getGasTankSize();
         this.plateNumber = plateNumber;
-        this.tripRecorder = tripRecorder;
+        this.tripRecorder = new ArrayList<Double>();
     }
 
     void refill() {

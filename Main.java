@@ -8,7 +8,6 @@ class Main {
         ArrayList<CarModel> models = new ArrayList<CarModel>();
         ArrayList<Car> cars = new ArrayList<Car>();
         // while loop with a boolean to maximize the number of input lines
-        //boolean bool = true;
         while (read.hasNextLine()) {
             String[] input = read.nextLine().split(" "); // split the readed line to list of phrases
 
@@ -53,16 +52,15 @@ class Main {
                 for (int i = 0; i < cars.size(); i++) {
                     if (cars.get(i).getPlateNumber() == Integer.parseInt(input[1])) {
                         float distance = Float.parseFloat(input[2]);
-                        double convdistance = distance;
+                        double convdistance = (double)distance;
                         System.out.println("#" + cars.get(i).getPlateNumber() 
                         + " made " + cars.get(i).getTrips(convdistance) + " trips longer than "
-                        + convdistance);
+                        + input[2]);
                         break;
                     }
                 }
             } else if (input[0].equals("FINISH")) {
-                //bool = false; // finish and change the boolean to break the while
-                exit();
+                break;
             }
         }
     }

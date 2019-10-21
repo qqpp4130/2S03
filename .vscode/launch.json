@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SymbolCalculator",
+            "request": "launch",
+            "mainClass": "SymbolCalculator",
+            "projectName": "2S03_403f1327"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Main",
             "request": "launch",
             "mainClass": "Original.Main",
